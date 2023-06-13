@@ -1,10 +1,10 @@
 /* joins: select all the computers from the products table:
 using the products table and the categories table, return the product name and the category name */
- select * from categories;
- select categories.name, products.name
- from categories
- inner join products on categories.CategoryID = products.CategoryID
- where categories.name = computers;
+ select p.Name, c.name
+ from products as p
+ inner join categories as c
+ on p.CategoryID = c.CategoryID
+ where c.name = "computers";
 /* joins: find all product names, product prices, and products ratings that have a rating of 5 */
 select products.Name, products.Price, reviews.Rating 
 from products
